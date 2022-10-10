@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<h1>{{ the_title }}</h1>
+
+<!-- head photo -->
+<img alt="baby platypuses" src="{{ url_for('static', filename='images/baby-platypuses.jpg') }}">
+<p class="credit">Two baby platypuses (<em>Ornithorhynchus anatinus</em>) at a sanctuary in Victoria, Australia. <a href="https://www.britannica.com/animal/platypus#/media/1/464303/249817" target="_blank">Encyclopædia Britannica</a></p>
+
+{% if error %}
+    {{error}} 
+{% endif %}
+
+<!-- menu to navigate pages -->
+<ul>
+  <li><a href="{{ url_for('venom') }}">Platypus poison</a></li>
+  <li><a href="{{ url_for('main') }}">Home page</a></li>
+  <li><a href="{{ url_for('history') }}">Natural History</a></li>
+</ul>
+
+<!-- filler text with platypus facts -->
+<p>
+  Despite their abundance, little is known about the life cycle of the platypus in the wild, and few of them have been kept successfully in captivity. The sexes avoid each other except to mate, and they do not mate until they are at least four years old. Males often fight during the breeding season, inflicting wounds on each other with their sharp ankle spurs. Courtship and mating take place in the water from late winter through spring; timing varies with latitude, mating occurring earlier in the more northern parts of the range and later in the more southerly regions. Mating is a strenuous affair; in one recorded session the male was seen tightly grasping the tail of the female with his bill as she led him on an exhaustive chase.
+</p>
+
+<p>
+  Males take no part in rearing the young. Females construct specially built nursery burrows, where they usually lay two small leathery eggs. Gestation is at least two weeks (possibly up to a month), and incubation of the eggs takes perhaps another 6 to 10 days. The female incubates the eggs by curling around them with her tail touching her bill. Each tiny platypus hatches from the egg with the aid of an egg tooth and fleshy nub (caruncle), structural holdovers from a reptilian past. The young suck milk from special mammary hairs and remain protected in the burrow, suckling for three to four months before becoming independent. Hatchlings, whose weight often increases by a factor of 20 during their first 14 weeks of life, possess vestigial teeth that are shed shortly after the young platypus leaves the burrow to feed on its own.
+</p>
+
+<p>
+  Males and females become fully grown between ages 12 and 18 months, and they become sexually mature at about age 18 months. They are long-lived for small mammals. Some studies have documented individuals living more than 20 years in the wild. The platypus can survive for nearly 23 years in captivity.
+</p>
+
+
+
+<!--Date/Time Footer Section-->
+<table class="footer">
+  <td class="footer" style="text-align:left">
+      <p>
+          <a href="{{ url_for('logout') }}">Logout</a>
+      </p>    
+      <div class="login-signup">
+          <span>Update Password?<a href="{{ url_for('update') }}"> Update Here</a></span>
+      </div>   
+  </td>
+  <td class="footer" style="text-align:right">
+      <p>{{datetime}}</p>
+  </td>
+</table>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<h1>{{ the_title }}</h1>
+
+<img alt="platypus: venomous spur" src="{{ url_for('static', filename='images/spur.jpg') }}">
+<p class="credit">The spur on the ankle of a male platypus (<em>Ornithorhynchus anatinus</em>). The animal's ankle spurs release a venom that causes intense pain. <a href="https://www.britannica.com/animal/platypus#/media/1/464303/221963" target="_blank">Encyclopædia Britannica</a></p>
+
+{% if error %}
+    {{error}} 
+{% endif %}
+
+<ul>
+  <li><a href="{{ url_for('lifecycle') }}">Life cycle and reproduction</a></li>
+  <li><a href="{{ url_for('main') }}">Home page</a></li>
+  <li><a href="{{ url_for('history') }}">Natural History</a></li>
+</ul>
+
+<p>
+Platypuses range in length from 38 to 60 cm (15 to 24 inches); males are generally larger than females. Aquatic adaptations include the flat streamlined body, dorsally placed eyes and nostrils, and dense waterproof fur that keeps the platypus well insulated. Long guard hairs protect the soft underfur, which remains dry even after hours in the water. The extensive webbing on the front feet extends well past the claws and is essential in propelling the animal through the water. The paddlelike tail acts as a stabilizer during swimming, while the back feet act as rudders and brakes.
+</p>
+
+<p>
+  Odd skeletal features of platypuses include an archaic robust shoulder girdle and a short, wide humerus providing extensive muscle attachment areas for the exceptionally strong front limbs. The outside of the bill is covered by soft, sensitive skin. Inside the bill, adult platypuses do not have true teeth but instead have developed flat pads of hardened gum tissue. Male platypuses have a spur on the inner side of each ankle that is connected to a venom gland located over the thighs. The spurs can be wielded in defense, and the venom is potent enough to kill small animals and cause intense pain in humans if the spur penetrates the skin.
+</p>
+
+<br>
+
+<p>
+  Top 5 Most Venomous Mammals
+</p>
+<table>
+  <tr>
+    <td>#1: </td>
+    <td>Platypus</td>
+    <td>Its venom is one of the only ones to actually pose a threat to humans. While not fatal, male platypus venom is unbelievably painful to humans, and it can result in lingering pain at the injury site and associated limb for days or even months.</td>
+  </tr>
+  <tr>
+    <td>#2: </td>
+    <td>Slow Loris</td>
+    <td>The slow loris possesses sacks beneath its forelimbs that it licks prior to biting. Licking the sack transfers venom to the mouth of the loris that can result in an anaphylactic reaction and death.</td>
+  </tr>
+  <tr>
+    <td>#3: </td>
+    <td>Hispaniolan Solenodon</td>
+    <td>Their bites inject venom through their lower incisors that can cause paralysis and death.</td>
+  </tr>
+  <tr>
+    <td>#4: </td>
+    <td>Cuban Solenodon</td>
+    <td>It is a nocturnal insectivore that resides in burrows or hollow trees emerging at night to hunt frogs, reptiles, and small rodents.</td>
+  </tr>
+  <tr>
+    <td>#5: </td>
+    <td>European Mole</td>
+    <td>European moles avoid humans at all costs, but they will inject their victims with a paralytic saliva by biting them when hunting or threatened.</td>
+  </tr>
+</table>
+
+
+<!--Date/Time Footer Section-->
+<table class="footer">
+  <td class="footer" style="text-align:left">
+      <p>
+          <a href="{{ url_for('logout') }}">Logout</a>
+      </p>    
+      <div class="login-signup">
+          <span>Update Password?<a href="{{ url_for('update') }}"> Update Here</a></span>
+      </div>   
+  </td>
+  <td class="footer" style="text-align:right">
+      <p>{{datetime}}</p>
+  </td>
+</table>
+
+
+{% endblock %}

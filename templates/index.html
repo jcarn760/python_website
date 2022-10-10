@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<!-- to be filled by the Python script -->
+<h1>{{ the_title }}</h1>
+
+<!-- head photo -->
+<img alt="Photo: Platypus" src="{{ url_for('static', filename='images/Platypus.jpg') }}">
+<p class="credit">Photo by Hans and Judy Besage--Mary Evans Picture Library <a href="https://www.britannica.com/animal/platypus#/media/1/464303/92089" target="_blank">via Encyclopædia Britannica</a></p>
+
+{% if error %}
+    {{error}} 
+{% endif %}
+
+<ul>
+  <!-- menu to navigate pages -->
+  <li><a href="{{ url_for('venom') }}">Platypus Poison</a></li>
+  <li><a href="{{ url_for('lifecycle') }}">Life cycle and reproduction</a></li>
+  <li><a href="{{ url_for('history') }}">Natural History</a></li>
+</ul>
+
+<!-- filler text with platypus facts -->
+<p>
+    The Platypus (<em>Ornithorhynchus anatinus</em>) also called duckbill, a small amphibious Australian mammal noted for its odd combination of primitive features and special adaptations, especially the flat, almost comical bill that early observers thought was that of a duck sewn onto the body of a mammal. Adding to its distinctive appearance are conspicuous white patches of fur under the eyes. The fur on the rest of the body is dark to light brown above, with lighter fur on the underside.
+</p>
+
+<p>
+    The platypus is common in waterways of eastern Australia, where it generally feeds on bottom-dwelling invertebrates but also takes an occasional frog, fish, or insect at the water’s surface. This shy creature forages most actively from dusk to dawn, sheltering during the day in burrows dug into stream banks. It is exquisitely adapted for its aquatic lifestyle, having a flattened torpedo-like body, dense waterproof fur, and strong front limbs used for swimming as well as digging. Even the head is streamlined, each ear being housed in a groove together with a small eye. The senses of sight, smell, and hearing are essentially shut down while the platypus is submerged to feed, but it possesses a unique electromechanical system of electroreceptors and touch receptors that allow it to navigate perfectly underwater. Similar electroreceptors are also present in echidnas, which, together with the platypus, make up the mammalian order Monotremata, a unique group with an exceptionally ancient history.
+</p>
+
+
+
+<!--Date/Time Footer Section-->
+<table class="footer">
+    <td class="footer" style="text-align:left">
+        <p>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </p>    
+        <div class="login-signup">
+            <span>Update Password?<a href="{{ url_for('update') }}"> Update Here</a></span>
+        </div>   
+    </td>
+    <td class="footer" style="text-align:right">
+        <p>{{datetime}}</p>
+    </td>
+</table>
+
+{% endblock %}
